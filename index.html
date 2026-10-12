@@ -82,6 +82,13 @@ html{scroll-padding-top:95px} :focus-visible{outline:3px solid #e4a72d;outline-o
 .back-top{position:fixed;right:22px;bottom:88px;z-index:70;width:44px;height:44px;border:0;border-radius:50%;background:var(--navy);color:#fff;display:none;font-size:20px}.back-top.visible{display:block}
 @media(max-width:900px){.feature-strip{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}}@media(max-width:600px){.tool-form{grid-template-columns:1fr}.tool-form .wide{grid-column:auto}.tool-card{padding:18px}.feature-strip{grid-template-columns:1fr 1fr}.back-top{right:14px;bottom:80px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style><style>
+.google-profile-card{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;margin:0 0 25px;padding:26px 30px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,#f4f9fc,#fff);box-shadow:0 10px 28px #083d5909}
+.google-profile-copy h3{color:var(--navy);font-size:24px;margin:8px 0}.google-profile-copy p{color:var(--muted);margin:0 0 16px}
+.google-profile-mark{width:145px;min-height:125px;border:1px dashed #c8dce6;border-radius:18px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.google-profile-mark span{font-size:38px;font-weight:900;background:conic-gradient(#4285f4 0 25%,#34a853 0 50%,#fbbc05 0 75%,#ea4335 0);background-clip:text;-webkit-background-clip:text;color:transparent}
+.google-profile-mark strong{color:var(--navy);font-size:13px}.google-profile-mark small{color:var(--muted);font-size:11px}
+@media(max-width:600px){.google-profile-card{grid-template-columns:1fr;padding:20px}.google-profile-mark{width:100%;min-height:95px}}
 </style></head>
 <body><a class="skip-link" href="#home">Skip to main content</a>
 <header><div class="wrap nav">
@@ -155,7 +162,17 @@ html{scroll-padding-top:95px} :focus-visible{outline:3px solid #e4a72d;outline-o
 
 <section class="white" id="contact"><div class="wrap"><div class="heading"><div class="tag">Contact Us</div><h2>Let's discuss your requirement</h2><p>Contact us for GST and Income Tax services, along with PAN, TDS, Labour Certificates and other compliance requirements.</p></div>
 
-<div class="map-wrap">
+
+<div class="google-profile-card" aria-label="Find Naveen and Co on Google">
+  <div class="google-profile-copy">
+    <span class="tag">Find Us on Google</span>
+    <h3>Visit Naveen &amp; Co. on Google Maps</h3>
+    <p>Check our location and open directions before visiting our office.</p>
+    <a class="btn primary" href="https://maps.app.goo.gl/4DLEX73RJqAGHqwu7?g_st=ac" target="_blank" rel="noopener noreferrer">View on Google Maps ↗</a>
+  </div>
+  <div class="google-profile-mark" aria-hidden="true"><span>G</span><strong>Google Maps</strong><small>Naveen &amp; Co.</small></div>
+</div>
+\n<div class="map-wrap">
   <div class="map-toolbar">
     <strong>📍 Naveen &amp; Co. — Wilson Garden, Bengaluru</strong>
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=12.9454689,77.5986816" target="_blank" rel="noopener">Get Directions ↗</a>
