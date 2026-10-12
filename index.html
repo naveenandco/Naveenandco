@@ -152,7 +152,7 @@ footer{background:#082638;color:#c8d9e2;padding:45px 0 20px}.foot{display:grid;g
 <div class="item"><b>Office</b><span>#20/22, 1st Floor, 11th Main, 14th Cross Rd, beside Ninjas Hardware, Lakkasandra Extension, Wilson Garden, Bengaluru-560030</span><a class="direction-link" href="https://maps.app.goo.gl/4DLEX73RJqAGHqwu7?g_st=ac" target="_blank" rel="noopener">📍 Get Directions</a></div>
 <div class="item"><b>Working Hours</b><span>Monday – Saturday · 10:00 AM – 6:00 PM</span></div>
 </div>
-<div class="panel"><h3>Send an enquiry</h3><form onsubmit="event.preventDefault();alert('Demo form submitted. Connect this form to email, WhatsApp or your backend before publishing.');">
+<div class="panel"><h3>Send an enquiry</h3><form id="enquiry-form">
 <input required placeholder="Your name"><input required type="tel" placeholder="Phone number"><input required type="email" placeholder="Email address">
 <select>
 <option>Select a service</option>
@@ -176,4 +176,57 @@ footer{background:#082638;color:#c8d9e2;padding:45px 0 20px}.foot{display:grid;g
 <a class="whatsapp-float" href="https://wa.me/919886701942" target="_blank" rel="noopener" aria-label="Chat with Naveen & Co. on WhatsApp">
   <span>◔</span><b>WhatsApp</b>
 </a>
+
+<script>
+(() => {
+  const nav = document.querySelector('header nav');
+  const menuButton = document.querySelector('.menu');
+  if (nav && menuButton) {
+    menuButton.setAttribute('aria-label', 'Toggle navigation menu');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+  const form = document.getElementById('enquiry-form');
+  if (form) {
+    const service = form.querySelector('select');
+    if (service) {
+      service.required = true;
+      service.options[0].value = '';
+    }
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const fields = new FormData(form);
+      const values = Array.from(form.querySelectorAll('input, select, textarea'));
+      const name = values[0]?.value.trim() || '';
+      const phone = values[1]?.value.trim() || '';
+      const email = values[2]?.value.trim() || '';
+      const selectedService = service?.value || 'Not specified';
+      const message = values[4]?.value.trim() || 'No additional details provided.';
+      const text = [
+        'New website enquiry — Naveen & Co.',
+        'Name: ' + name,
+        'Phone: ' + phone,
+        'Email: ' + email,
+        'Service: ' + selectedService,
+        'Requirement: ' + message
+      ].join('\n');
+      window.open('https://wa.me/919886701942?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    });
+  }
+
+  document.querySelectorAll('.copy').forEach(el => {
+    el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + new Date().getFullYear());
+  });
+})();
+</script>
+
 </body></html>
