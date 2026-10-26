@@ -70,7 +70,9 @@ footer{background:#072b3d;color:#d5e4eb;padding:47px 0 20px}.footer-grid{display
 .kb-dropdown>summary,.kb-sub>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 10px;color:var(--ink);font-weight:600;white-space:nowrap}
 .kb-dropdown>summary::-webkit-details-marker,.kb-sub>summary::-webkit-details-marker{display:none}
 .kb-dropdown>summary{padding:12px 0;color:inherit;font-weight:700}
-.kb-menu,.kb-submenu{display:none;position:absolute;z-index:1000;background:#fff;color:var(--ink);min-width:235px;max-height:min(72vh,650px);overflow:auto;border:1px solid var(--line);box-shadow:0 14px 35px #071e2b30;border-radius:3px}
+.kb-menu,.kb-submenu{display:none;position:absolute;z-index:1000;background:#fff;color:var(--ink);min-width:235px;border:1px solid var(--line);box-shadow:0 14px 35px #071e2b30;border-radius:3px}
+.kb-menu{max-height:none;overflow:visible}
+.kb-submenu{max-height:min(72vh,650px);overflow-y:auto;overflow-x:visible}
 .kb-dropdown[open]>.kb-menu{display:block;top:100%;left:0}
 .kb-sub[open]>.kb-submenu{display:block;top:0;left:100%}
 .kb-menu>a,.kb-submenu>a{display:block;padding:11px 13px;font-weight:500;font-size:.92rem;border-bottom:1px solid #edf1f3;white-space:normal;line-height:1.35}
