@@ -23,6 +23,7 @@ const specs={
 };
 (specs[TYPE]||[]).forEach(([id,label,val,opts])=>field(id,label,val,opts));
 const calculateButton=document.createElement('button');calculateButton.type='submit';calculateButton.id='calculate-button';calculateButton.textContent='Calculate';form.append(calculateButton);
+const calculateButton=document.createElement('button');calculateButton.type='submit';calculateButton.id='calculate-button';calculateButton.textContent='Calculate';form.append(calculateButton);
 if(TYPE==='tax')field('year','Financial year','2026-27',[['2025-26','FY 2025–26'],['2026-27','FY 2026–27']]);
 const n=id=>Number(document.getElementById(id).value||0),v=id=>document.getElementById(id).value,fmt=x=>Number(x).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
 form.addEventListener('submit',e=>{e.preventDefault();try{result.textContent=calculate()}catch(err){result.textContent='Please check your entries and try again.'}});
