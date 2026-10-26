@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /nidu/
+Sitemap: https://naveenandco.com/sitemap.xml
